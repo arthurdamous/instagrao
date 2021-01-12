@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivw_user_pub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_face_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvw_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/cor_escura"
+            app:layout_constraintBottom_toBottomOf="@+id/ivw_user_pub"
+            app:layout_constraintLeft_toRightOf="@+id/ivw_user_pub"
+            app:layout_constraintTop_toTopOf="@+id/ivw_user_pub"
+            tools:text="arthurdamous" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivw_pub_principal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvw_user_name"
+            app:srcCompat="@drawable/cap1" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_curtir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivw_pub_principal"
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_comentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            app:layout_constraintLeft_toRightOf="@id/btn_curtir"
+            app:layout_constraintTop_toBottomOf="@+id/ivw_pub_principal"
+            app:srcCompat="@drawable/ic_outline_mode_comment_24" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            app:layout_constraintLeft_toRightOf="@id/btn_comentar"
+            app:layout_constraintTop_toBottomOf="@+id/ivw_pub_principal"
+            app:srcCompat="@drawable/ic_outline_send_24" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivw_pub_principal"
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_curtido_por"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/tvw_user_like"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_curtir"
+            tools:text="Curtido por " />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_user_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cor_escura"
+            app:layout_constraintBottom_toBottomOf="@id/tvw_curtido_por"
+            app:layout_constraintEnd_toStartOf="@+id/tvw_e_outros"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvw_curtido_por"
+            app:layout_constraintTop_toTopOf="@id/tvw_curtido_por"
+            tools:text="lucineteteixeira" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_e_outros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvw_user_like"
+            app:layout_constraintEnd_toStartOf="@+id/tvw_user_others"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvw_user_like"
+            app:layout_constraintTop_toTopOf="@+id/tvw_user_like"
+            tools:text=" e " />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_user_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cor_escura"
+            app:layout_constraintBottom_toBottomOf="@id/tvw_e_outros"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvw_e_outros"
+            app:layout_constraintTop_toTopOf="@id/tvw_e_outros"
+            tools:text="outras pessoas" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_text_pub_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvw_curtido_por"
+
+            tools:text="arthurdamous Este é um teste para verificar o texto da publicacao do usuario, ele está muito feliz em fazer esta publicacao" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvw_ver_todos_com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvw_text_pub_user"
+            tools:text="Ver todos os 13 comentários" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivw_user_pub_inferior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvw_ver_todos_com"
+            app:srcCompat="@drawable/ic_baseline_face_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/ivw_user_pub_inferior"
+            app:layout_constraintLeft_toRightOf="@id/ivw_user_pub_inferior"
+            app:layout_constraintTop_toTopOf="@id/ivw_user_pub_inferior"
+            tools:text="Adicione um comentário..." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivw_user_pub_inferior"
+            tools:text="Há 3 dias" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
