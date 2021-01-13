@@ -4,44 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_top"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/toolbar_color"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_stories"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@color/rv_stories"
+        android:orientation="horizontal"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/rv_feed"
         app:layout_constraintTop_toBottomOf="@id/toolbar_top"
-        app:layout_constraintBottom_toTopOf="@id/rv_feed"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_feed"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/toolbar_bottom"
-        app:layout_constraintTop_toBottomOf="@id/rv_stories"
-        />
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@+id/cl_bottom_app_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_stories" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_bottom"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:background="@color/toolbar_color"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_feed">
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_toolbar_perfil"
+            app:labelVisibilityMode="unlabeled"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+            />
 
-
-
-
-
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

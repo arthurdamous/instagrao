@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_outline_add_box_24"
+        android:title="Adicionar"
+        app:showAsAction="always" />
+    
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="Favoritos"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_watch"
+        android:icon="@drawable/ic_outline_send_24"
+        android:title="Direct"
+        app:showAsAction="always" />
+
+</menu>
